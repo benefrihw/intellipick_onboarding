@@ -49,10 +49,10 @@
         "username": "JIN HO",
         "nickname": "Mentos",
         "authorities": [
-        {
-        "authorityName": "ROLE_USER"
-        }
-        	]
+            {
+            "authorityName": "ROLE_USER"
+            }
+            ]
         }
         
         ```
