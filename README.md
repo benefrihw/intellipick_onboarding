@@ -1,4 +1,4 @@
-# intellipick_onboarding
+# [한 달 인턴]Preonboarding Backend Course(Node.js)
 ## Requirements
 ---
 - [ ]  Jest를 이용한 테스트 코드 작성법 이해
