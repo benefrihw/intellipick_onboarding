@@ -35,9 +35,9 @@
         ```json
         json코드 복사
         {
-        	"username": "JIN HO",
-        	"password": "12341234",
-        	"nickname": "Mentos"
+        "username": "JIN HO",
+        "password": "12341234",
+        "nickname": "Mentos"
         }
         
         ```
@@ -46,12 +46,12 @@
         ```json
         json코드 복사
         {
-        	"username": "JIN HO",
-        	"nickname": "Mentos",
-        	"authorities": [
-        			{
-        					"authorityName": "ROLE_USER"
-        			}
+        "username": "JIN HO",
+        "nickname": "Mentos",
+        "authorities": [
+        {
+        "authorityName": "ROLE_USER"
+        }
         	]
         }
         
@@ -62,8 +62,8 @@
         ```json
         json코드 복사
         {
-        	"username": "JIN HO",
-        	"password": "12341234"
+        "username": "JIN HO",
+        "password": "12341234"
         }
         
         ```
@@ -72,7 +72,7 @@
         ```json
         json코드 복사
         {
-        	"token": "eKDIkdfjoakIdkfjpekdkcjdkoIOdjOKJDFOlLDKFJKL",
+        "token": "eKDIkdfjoakIdkfjpekdkcjdkoIOdjOKJDFOlLDKFJKL",
         }
         
         ```
