@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import jwt from 'jsonwebtoken'
+import { accessToken, refreshToken } from "./jwt.middleware.js";
 
 dotenv.config();
 
@@ -8,8 +8,6 @@ const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT;
-const ACCESS_TOKEN_SECRET_KEY = process.env.ACCESS_TOKEN_SECRET_KEY;
-const REFRESH_TOKEN_SECRET_KEY = process.env.REFRESH_TOKEN_SECRET_KEY;
 
 // 임시 user 등록
 const users = [
@@ -19,25 +17,6 @@ const users = [
     nickname: "Mentos",
   },
 ];
-
-// accessToken 발급
-const accessToken = (user) => {
-  const payload = {
-    username: user.username,
-    nickname: user.nickname,
-    authorities: [{ authorityName: "ROLE_USER" }],
-  };
-  return jwt.sign(payload, ACCESS_TOKEN_SECRET_KEY, { expiresIn: "5m" });
-};
-
-// refreshToken 발급
-const refreshToken = (user) => {
-  const payload = {
-    username: user.username,
-    nickname: user.nickname,
-  };
-  return jwt.sign(payload, REFRESH_TOKEN_SECRET_KEY, { expiresIn: "1d" });
-};
 
 // 통신 확인
 app.get("/", (req, res) => {
