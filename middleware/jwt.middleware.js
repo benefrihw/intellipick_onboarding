@@ -40,8 +40,8 @@ export const verifyAccessToken = (req, res, next) => {
     if (err) {
       res.status(401).json({ message: "권한이 없습니다." });
     }
-  });
 
-  req.user = decoded;
-  next();
+    req.user = decoded;
+    next();
+  });
 };
