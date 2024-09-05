@@ -49,6 +49,10 @@ router.post("/signup", async (req, res) => {
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
+  if (!username || !password) {
+    return res.status(400).json({ message: "모든 항목을 입력해주세요" });
+  }
+
   const existingUser = await prisma.user.findUnique({
     where: {
       username,
