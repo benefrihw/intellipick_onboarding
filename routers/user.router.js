@@ -6,6 +6,35 @@ import { accessToken, refreshToken } from "../middleware/jwt.middleware.js";
 const router = express.Router();
 const prisma = new PrismaClient();
 
+/**
+ * @swagger
+ * /api/signup:
+ *   post:
+ *     summary: 회원가입
+ *     description: 회원가입을 진행합니다.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               username:
+ *                 type: string
+ *                 description: username
+ *               password:
+ *                 type: string
+ *                 description: password
+ *               nickname:
+ *                 type: string
+ *                 description: nickname
+ *     responses:
+ *       201:
+ *         description: 회원가입 성공
+ *       400:
+ *         description: 회원가입 실패
+ */
+
 // 회원가입
 router.post("/signup", async (req, res) => {
   const { username, password, nickname } = req.body;
@@ -44,6 +73,32 @@ router.post("/signup", async (req, res) => {
     })),
   });
 });
+
+/**
+ * @swagger
+ * /api/login:
+ *   post:
+ *     summary: 로그인
+ *     description: 로그인을 진행합니다.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               username:
+ *                 type: string
+ *                 description: username
+ *               password:
+ *                 type: string
+ *                 description: password
+ *     responses:
+ *       200:
+ *         description: 로그인 성공
+ *       401:
+ *         description: 로그인 실패
+ */
 
 // 로그인
 router.post("/login", async (req, res) => {
